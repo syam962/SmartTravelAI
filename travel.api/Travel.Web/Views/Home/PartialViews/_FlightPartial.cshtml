@@ -1,0 +1,92 @@
+ <div class="flight-search-container">
+    <div class="trip-type">
+        <label>
+            <input type="radio" name="tripType" value="oneWay" checked> One Way
+        </label>
+        <label>
+            <input type="radio" name="tripType" value="roundTrip"> Round Trip
+        </label>
+    </div>
+    
+        <div class="search-bar row">
+            <div class="col-3">
+                <div class="location">
+                    <label>From</label>
+                    <select name="fromLocation" class="form-select">
+                        <option value="TRV">Thiruvananthapuram (TRV)</option>
+                        <option value="DEL">Delhi (DEL)</option>
+                        <option value="BOM">Mumbai (BOM)</option>
+                    </select>
+                </div>
+                <div class="location">
+                    <label>To</label>
+                    <select name="toLocation" class="form-select">
+                        <option value="KUL">Kuala Lumpur (KUL)</option>
+                        <option value="SIN">Singapore (SIN)</option>
+                        <option value="DXB">Dubai (DXB)</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="date">
+                    <label>Departure</label>
+                    <input type="date" name="departureDate">
+                </div>
+                <div class="date">
+                    <label>Return</label>
+                    <input type="date" name="returnDate">
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="travellers-class">
+                    <label>Travellers & Class</label>
+                    <input type="text" name="travellersClass" placeholder="1 Traveller, Economy" readonly data-bs-toggle="popover" data-bs-trigger="focus" data-bs-html="true" data-bs-content="
+                        <div class='popover-content'>
+                            <div class='traveller-option'>
+                                <label>Adults</label>
+                                <span>12 yrs or above</span>
+                                <input type='number' name='adults' min='0' max='9' value='1'>
+                            </div>
+                            <div class='traveller-option'>
+                                <label>Children</label>
+                                <span>2 - 12 yrs</span>
+                                <input type='number' name='children' min='0' max='9' value='0'>
+                            </div>
+                            <div class='traveller-option'>
+                                <label>Infants</label>
+                                <span>0 - 2 yrs</span>
+                                <input type='number' name='infants' min='0' max='4' value='0'>
+                            </div>
+                        </div>
+                    ">
+                </div>
+            </div>
+
+            <script>
+            document.addEventListener('DOMContentLoaded', function () {
+            var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
+            var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+            return new bootstrap.Popover(popoverTriggerEl);
+            });
+            });
+            </script>
+            <div class="search-button">
+                <button type="button">Search</button>
+            </div>
+        </div>
+    
+    <div class="special-fares">
+        <label>Special Fares (Optional):</label>
+        <div>
+            <label>
+                <input type="checkbox" name="specialFare" value="student"> Student
+            </label>
+            <label>
+                <input type="checkbox" name="specialFare" value="seniorCitizen"> Senior Citizen
+            </label>
+            <label>
+                <input type="checkbox" name="specialFare" value="armedForces"> Armed Forces
+            </label>
+        </div>
+    </div>
+ </div>

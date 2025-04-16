@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/travel.api/Travel.Web/bin/Debug/net9.0
+/travel.api/Travel.Web/obj
+/travel.api/.vs/ProjectEvaluation
+/travel.api/.vs/travel.api/copilot-chat/0cecd951/sessions
+/travel.api/.vs/travel.api/CopilotIndices/17.13.444.19527
+/travel.api/.vs/travel.api/DesignTimeBuild

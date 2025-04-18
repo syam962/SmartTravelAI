@@ -1,19 +1,32 @@
 ﻿using Microsoft.SemanticKernel;
 using System.ComponentModel;
+using Travel.Web.Models;
+using Travel.Web.Services;
 
 public sealed class BookingsPlugin
 {
 
 
-
-    public BookingsPlugin()
-
-
+    private readonly IFlightService _flightService;
+    public BookingsPlugin(IFlightService flightService)
 
     {
+        _flightService = flightService;
 
 
     }
+    [KernelFunction("FlightLists")]
+    [Description("List of flight between two cities.Need source and destination city id")]
+    public async Task<List<Flight>> FlightList(
+        [Description("source city Id")] int sourceCityId,
+        [Description("Destination city Id")] int destinationCityId)
+    {
+
+        var res = await _flightService.GetFlightsByCityAsync(sourceCityId, destinationCityId);
+
+        return res.ToList();
+    }
+
 
     [KernelFunction("BookTable")]
     [Description("Books a new table at a restaurant")]

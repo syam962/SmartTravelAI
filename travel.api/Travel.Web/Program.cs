@@ -4,6 +4,10 @@ using Microsoft.SemanticKernel.Agents;
 using Microsoft.SemanticKernel.ChatCompletion;
 using Microsoft.SemanticKernel.Connectors.AzureOpenAI;
 using Microsoft.SemanticKernel.Connectors.OpenAI; // Add this using directive to resolve 'Plugins'
+using Microsoft.EntityFrameworkCore;
+using Npgsql.EntityFrameworkCore.PostgreSQL;
+using Travel.Web.Reposistory;
+using Travel.Web.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +15,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 // Bind configuration for OpenAI settings
+
 builder.Services.Configure<OpenAISettings>(builder.Configuration.GetSection("OpenAI"));
 
 // Register IChatCompletionService with settings from appsettings.json
@@ -23,8 +28,27 @@ builder.Services.AddSingleton<IChatCompletionService>(sp =>
     );
 });
 
+// Add the following using directive at the top of the file to include the Npgsql.EntityFrameworkCore.PostgreSQL namespace
+
+
+// Ensure that the Npgsql.EntityFrameworkCore.PostgreSQL NuGet package is installed in your project.
+// You can install it using the following command in the Package Manager Console:
+// Install-Package Npgsql.EntityFrameworkCore.PostgreSQL
+// Add PostgreSQL DbContext
+var connectionString = builder.Configuration.GetConnectionString("PostgresConnection");
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseNpgsql(builder.Configuration.GetConnectionString("PostgresConnection")));
+
+// Register IUnitOfWork for dependency injection
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+
 // Add Semantic Kernel to dependency injection
-builder.Services.AddSingleton<BookingsPlugin>();
+builder.Services.AddScoped<BookingsPlugin>();
+
+// Register IFlightService for dependency injection
+builder.Services.AddScoped<IFlightService, FlightService>();
+builder.Services.AddScoped<ILocationService, LocationService>();
+
 
 builder.Services.AddKeyedTransient<Kernel>("BookingsKernal", (sp, key) =>
 {
@@ -59,10 +83,4 @@ app.MapControllerRoute(
 
 app.Run();
 
-// Supporting class for OpenAI settings
-public class OpenAISettings
-{
-    public string ModelId { get; set; }
-    public string ApiKey { get; set; }
-}
 

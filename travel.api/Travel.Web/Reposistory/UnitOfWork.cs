@@ -7,6 +7,8 @@ namespace Travel.Web.Reposistory
         IUserRepository Users { get; }
         IFlightRepository Flights { get; }
         ILocationRepository Locations { get; }
+        IFlightSegmentRepository FlightSegments { get; }
+        IBookingRepository Bookings { get; }
         Task<int> CompleteAsync();
     }
 
@@ -20,11 +22,16 @@ namespace Travel.Web.Reposistory
             Users = new UserRepository(context);
             Flights = new FlightRepository(context);
             Locations = new LocationRepository(context);
+            FlightSegments = new FlightSegmentRepository(context);
+            Bookings = new BookingRepository(context);
+
         }
 
         public IUserRepository Users { get; private set; }
         public IFlightRepository Flights { get; private set; }
         public ILocationRepository Locations { get; private set; }
+        public IFlightSegmentRepository FlightSegments { get; private set; }
+        public IBookingRepository Bookings { get; private set; }
 
         public async Task<int> CompleteAsync()
         {

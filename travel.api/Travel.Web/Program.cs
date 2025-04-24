@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Npgsql.EntityFrameworkCore.PostgreSQL;
 using Travel.Web.Reposistory;
 using Travel.Web.Services;
+using Travel.Web.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -27,7 +28,8 @@ builder.Services.AddSingleton<IChatCompletionService>(sp =>
         apiKey: openAISettings.ApiKey
     );
 });
-
+builder.Services.AddMemoryCache(); // Add this line to register IMemoryCache service
+builder.Services.AddSingleton<ICacheService, CacheService>(); // Register ICacheService for dependency injection
 // Add the following using directive at the top of the file to include the Npgsql.EntityFrameworkCore.PostgreSQL namespace
 
 
@@ -48,6 +50,7 @@ builder.Services.AddScoped<BookingsPlugin>();
 // Register IFlightService for dependency injection
 builder.Services.AddScoped<IFlightService, FlightService>();
 builder.Services.AddScoped<ILocationService, LocationService>();
+builder.Services.AddScoped<IFlightBookingService, FlightBookingService>();
 
 
 builder.Services.AddKeyedTransient<Kernel>("BookingsKernal", (sp, key) =>
@@ -58,7 +61,8 @@ builder.Services.AddKeyedTransient<Kernel>("BookingsKernal", (sp, key) =>
 
     return new Kernel(sp, pluginCollection);
 });
-
+// Register AutoMapper for dependency injection
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -68,6 +72,7 @@ if (!app.Environment.IsDevelopment())
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
+
 
 app.UseHttpsRedirection();
 app.UseRouting();

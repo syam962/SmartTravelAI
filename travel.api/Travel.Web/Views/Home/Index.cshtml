@@ -1,34 +1,126 @@
 ﻿@{  
-  ViewData["Title"] = "Home Page";  
+ ViewData["Title"] = "Home Page";  
 }  
 
-<div>  
-  <ul class="nav nav-tabs" id="myTab" role="tablist">  
-      <li class="nav-item" role="presentation">  
-          <a class="nav-link active" id="flight-tab" data-bs-toggle="tab" href="#flight" role="tab" aria-controls="flight" aria-selected="true">Flight</a>  
-      </li>  
-      <li class="nav-item" role="presentation">  
-          <a class="nav-link" id="hotel-tab" data-bs-toggle="tab" href="#hotel" role="tab" aria-controls="hotel" aria-selected="false">Hotel</a>  
-      </li>  
-      <li class="nav-item" role="presentation">  
-          <a class="nav-link" id="train-tab" data-bs-toggle="tab" href="#train" role="tab" aria-controls="train" aria-selected="false">Train</a>  
-      </li>  
-      <li class="nav-item" role="presentation">  
-          <a class="nav-link" id="buses-tab" data-bs-toggle="tab" href="#buses" role="tab" aria-controls="buses" aria-selected="false">Buses</a>  
-      </li>  
-  </ul>  
-  <div class="tab-content" id="myTabContent">  
-      <div class="tab-pane fade show active" id="flight" role="tabpanel" aria-labelledby="flight-tab">  
-               @await Html.PartialAsync("PartialViews/_FlightPartial")  
-           </div>
-      <div class="tab-pane fade" id="hotel" role="tabpanel" aria-labelledby="hotel-tab">
-            @await Html.PartialAsync("PartialViews/_HotelPartial")
-        </div>  
-      <div class="tab-pane fade" id="train" role="tabpanel" aria-labelledby="train-tab">
-            @await Html.PartialAsync("PartialViews/_TrainPartial")
-        </div>  
-      <div class="tab-pane fade" id="buses" role="tabpanel" aria-labelledby="buses-tab">
-            @await Html.PartialAsync("PartialViews/_BusesPartial")
-        </div>  
-  </div>  
+<div class="container-fluid">
+   <div class="d-flex align-items-center">
+       <form id="search-form" class="d-flex w-100">
+           <input type="text" id="query" name="query" class="form-control me-2" placeholder="Enter search text">
+           <button type="button" id="search-button" class="btn btn-primary">
+               <i class="bi bi-send"></i> Search
+           </button>
+       </form>
+   </div>
+
+   <div id="search-results" class="mt-3">
+    
+<pre style="height:600px; font-family:'Verdana', 'Courier New', Courier, monospace; font-size: 14px; color: #333; background-color: #f9f9f9; padding: 10px; border: 1px solid #ddd; border-radius: 5px;">  
+   Here are the available flights between Trivandrum (Thiruvananthapuram) and Bengaluru between 25 April and 01 May 2025:  
+
+### Flights on 25 April 2025  
+- **Departure:** 12:47 PM IST  
+ **Arrival:** 2:47 PM IST  
+ **Prices:**  
+ - Economy: ₹3,443  
+ - Business: ₹8,282  
+ - First Class: ₹14,940  
+
+### Flights on 27 April 2025  
+- **Departure:** 12:47 PM IST  
+ **Arrival:** 2:47 PM IST  
+ **Prices:**  
+ - Economy: ₹2,721  
+ - Business: ₹7,652  
+ - First Class: ₹15,399  
+
+- **Departure:** 8:47 PM IST  
+ **Arrival:** 10:47 PM IST  
+ **Prices:**  
+ - Economy: ₹3,055  
+ - Business: ₹7,937  
+ - First Class: ₹14,671  
+
+### Flights on 28 April 2025  
+- **Departure:** 8:47 AM IST  
+ **Arrival:** 11:47 AM IST  
+ **Prices:**  
+ - Economy: ₹3,029  
+ - Business: ₹7,651  
+ - First Class: ₹14,549  
+
+- **Departure:** 4:47 PM IST  
+ **Arrival:** 6:47 PM IST  
+ **Prices:**  
+ - Economy: ₹2,685  
+ - Business: ₹7,733  
+ - First Class: ₹14,579  
+
+### Flights on 29 April 2025  
+- **Departure:** 8:47 AM IST  
+ **Arrival:** 10:47 AM IST  
+ **Prices:**  
+ - Economy: ₹3,301  
+ - Business: ₹7,623  
+ - First Class: ₹14,528  
+
+- **Departure:** 8:47 AM IST  
+ **Arrival:** 12:47 PM IST  
+ **Prices:**  
+ - Economy: ₹2,886  
+ - Business: ₹7,571  
+ - First Class: ₹15,289  
+
+### Flights on 01 May 2025  
+- **Departure:** 12:47 AM IST  
+ **Arrival:** 2:47 AM IST  
+ **Prices:**  
+ - Economy: ₹2,786  
+ - Business: ₹8,258  
+ - First Class: ₹14,530  
+
+- **Departure:** 12:47 AM IST  
+ **Arrival:** 4:47 AM IST  
+ **Prices:**  
+ - Economy: ₹3,484  
+ - Business: ₹7,802  
+ - First Class: ₹15,437  
+
+Please let me know if you need further assistance or details!  
+</pre>
+   </div>
 </div>
+
+@section Scripts {
+   <script>
+       document.getElementById('search-button').addEventListener('click', function () {
+           const query = document.getElementById('query').value;
+
+           fetch('/Home/SearchAI', {
+               method: 'POST',
+               headers: {
+                   'Content-Type': 'application/json'
+               },
+               body: JSON.stringify({ query: query })
+           })
+           .then(response => response.json())
+           .then(data => {
+               const resultsContainer = document.getElementById('search-results');
+               resultsContainer.innerHTML = '';
+
+               if (data ) {
+                  
+                       const div = document.createElement('pre');
+                        div.textContent = data.data;
+                       resultsContainer.appendChild(div);
+                  
+               } else {
+                   resultsContainer.textContent = 'No results found.';
+               }
+           })
+           .catch(error => {
+               console.error('Error:', error);
+               document.getElementById('search-results').textContent = 'An error occurred while fetching results.';
+           });
+       });
+   </script>
+}

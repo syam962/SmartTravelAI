@@ -3,52 +3,160 @@
   "WorkspaceRootPath": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|d:\\projects\\genai\\smarttravelai\\travel.api\\travel.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|solutionrelative:travel.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|d:\\projects\\genai\\smarttravelai\\travel.api\\travel.web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|solutionrelative:travel.web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|d:\\projects\\genai\\smarttravelai\\travel.api\\travel.web\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|solutionrelative:travel.web\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|d:\\projects\\genai\\smarttravelai\\travel.api\\travel.web\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|solutionrelative:travel.web\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|d:\\projects\\genai\\smarttravelai\\travel.api\\travel.web\\plugins\\bookingsplugin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|solutionrelative:travel.web\\plugins\\bookingsplugin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|d:\\projects\\genai\\smarttravelai\\travel.api\\travel.web\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|solutionrelative:travel.web\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|d:\\projects\\genai\\smarttravelai\\travel.api\\travel.web\\services\\flightservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|solutionrelative:travel.web\\services\\flightservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|d:\\projects\\genai\\smarttravelai\\travel.api\\travel.web\\travel.web.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|solutionrelative:travel.web\\travel.web.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|d:\\projects\\genai\\smarttravelai\\travel.api\\travel.web\\services\\locationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|solutionrelative:travel.web\\services\\locationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|d:\\projects\\genai\\smarttravelai\\travel.api\\travel.web\\services\\iflightbookingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|solutionrelative:travel.web\\services\\iflightbookingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|d:\\projects\\genai\\smarttravelai\\travel.api\\travel.web\\reposistory\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|solutionrelative:travel.web\\reposistory\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|d:\\projects\\genai\\smarttravelai\\travel.api\\travel.web\\reposistory\\flightrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|solutionrelative:travel.web\\reposistory\\flightrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|d:\\projects\\genai\\smarttravelai\\travel.api\\travel.web\\reposistory\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|solutionrelative:travel.web\\reposistory\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|d:\\projects\\genai\\smarttravelai\\travel.api\\travel.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|solutionrelative:travel.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|d:\\projects\\genai\\smarttravelai\\travel.api\\travel.web\\properties\\servicedependencies.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|solutionrelative:travel.web\\properties\\servicedependencies.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|d:\\projects\\genai\\smarttravelai\\travel.api\\travel.web\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|solutionrelative:travel.web\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|d:\\projects\\genai\\smarttravelai\\travel.api\\travel.web\\bookingsplugin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|solutionrelative:travel.web\\bookingsplugin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|d:\\projects\\genai\\smarttravelai\\travel.api\\travel.web\\travel.web.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|solutionrelative:travel.web\\travel.web.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|d:\\projects\\genai\\smarttravelai\\travel.api\\travel.web\\views\\home\\partialviews\\_busespartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|solutionrelative:travel.web\\views\\home\\partialviews\\_busespartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|d:\\projects\\genai\\smarttravelai\\travel.api\\travel.web\\models\\booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|solutionrelative:travel.web\\models\\booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|d:\\projects\\genai\\smarttravelai\\travel.api\\travel.web\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|solutionrelative:travel.web\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|d:\\projects\\genai\\smarttravelai\\travel.api\\travel.web\\infrastructure\\cacheservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|solutionrelative:travel.web\\infrastructure\\cacheservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|d:\\projects\\genai\\smarttravelai\\travel.api\\travel.web\\views\\home\\partialviews\\aisearch_bar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|solutionrelative:travel.web\\views\\home\\partialviews\\aisearch_bar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|d:\\projects\\genai\\smarttravelai\\travel.api\\travel.web\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|solutionrelative:travel.web\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|d:\\projects\\genai\\smarttravelai\\travel.api\\travel.web\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|solutionrelative:travel.web\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|d:\\projects\\genai\\smarttravelai\\travel.api\\travel.web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|solutionrelative:travel.web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|d:\\projects\\genai\\smarttravelai\\travel.api\\travel.web\\models\\flightsegment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|solutionrelative:travel.web\\models\\flightsegment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|d:\\projects\\genai\\smarttravelai\\travel.api\\travel.web\\reposistory\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|solutionrelative:travel.web\\reposistory\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|d:\\projects\\genai\\smarttravelai\\travel.api\\travel.web\\models\\flight.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|solutionrelative:travel.web\\models\\flight.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|d:\\projects\\genai\\smarttravelai\\travel.api\\travel.web\\models\\country.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|solutionrelative:travel.web\\models\\country.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|d:\\projects\\genai\\smarttravelai\\travel.api\\travel.web\\models\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|solutionrelative:travel.web\\models\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|d:\\projects\\genai\\smarttravelai\\travel.api\\travel.web\\models\\travelclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|solutionrelative:travel.web\\models\\travelclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|d:\\projects\\genai\\smarttravelai\\travel.api\\travel.web\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|solutionrelative:travel.web\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|d:\\projects\\genai\\smarttravelai\\travel.api\\travel.web\\models\\passenger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|solutionrelative:travel.web\\models\\passenger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|d:\\projects\\genai\\smarttravelai\\travel.api\\travel.web\\models\\flightsegmentclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|solutionrelative:travel.web\\models\\flightsegmentclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|d:\\projects\\genai\\smarttravelai\\travel.api\\travel.web\\models\\flightcompany.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|solutionrelative:travel.web\\models\\flightcompany.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|d:\\projects\\genai\\smarttravelai\\travel.api\\travel.web\\models\\bookingsegment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|solutionrelative:travel.web\\models\\bookingsegment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|d:\\projects\\genai\\smarttravelai\\travel.api\\travel.web\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|solutionrelative:travel.web\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|d:\\projects\\genai\\smarttravelai\\travel.api\\travel.web\\reposistory\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|solutionrelative:travel.web\\reposistory\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|d:\\projects\\genai\\smarttravelai\\travel.api\\travel.web\\dto\\flightroute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|solutionrelative:travel.web\\dto\\flightroute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|d:\\projects\\genai\\smarttravelai\\travel.api\\travel.web\\reposistory\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|solutionrelative:travel.web\\reposistory\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|d:\\projects\\genai\\smarttravelai\\travel.api\\travel.web\\views\\home\\partialviews\\_busespartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|solutionrelative:travel.web\\views\\home\\partialviews\\_busespartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|d:\\projects\\genai\\smarttravelai\\travel.api\\travel.web\\views\\home\\partialviews\\_trainpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|solutionrelative:travel.web\\views\\home\\partialviews\\_trainpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|d:\\projects\\genai\\smarttravelai\\travel.api\\.dockerignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|solutionrelative:.dockerignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|d:\\projects\\genai\\smarttravelai\\travel.api\\travel.web\\travel.web.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|solutionrelative:travel.web\\travel.web.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|d:\\projects\\genai\\smarttravelai\\travel.api\\travel.web\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|solutionrelative:travel.web\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|d:\\projects\\genai\\smarttravelai\\travel.api\\travel.web\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|solutionrelative:travel.web\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0F7DDC5D-DF62-4591-B75E-E654153071D1}|Travel.Web\\Travel.Web.csproj|d:\\projects\\genai\\smarttravelai\\travel.api\\travel.web\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -70,7 +178,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -78,19 +186,185 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Travel.Web.csproj",
-              "DocumentMoniker": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\Travel.Web.csproj",
-              "RelativeDocumentMoniker": "Travel.Web\\Travel.Web.csproj",
-              "ToolTip": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\Travel.Web.csproj",
-              "RelativeToolTip": "Travel.Web\\Travel.Web.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-04-16T14:46:55.708Z"
+              "DocumentIndex": 8,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\Program.cs",
+              "RelativeDocumentMoniker": "Travel.Web\\Program.cs",
+              "ToolTip": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\Program.cs",
+              "RelativeToolTip": "Travel.Web\\Program.cs",
+              "ViewState": "AgIAADwAAAAAAAAAAAAiwEEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T15:04:14.571Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
+              "Title": "FlightRepository.cs",
+              "DocumentMoniker": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\Reposistory\\FlightRepository.cs",
+              "RelativeDocumentMoniker": "Travel.Web\\Reposistory\\FlightRepository.cs",
+              "ToolTip": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\Reposistory\\FlightRepository.cs",
+              "RelativeToolTip": "Travel.Web\\Reposistory\\FlightRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T14:54:50.867Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UnitOfWork.cs",
+              "DocumentMoniker": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\Reposistory\\UnitOfWork.cs",
+              "RelativeDocumentMoniker": "Travel.Web\\Reposistory\\UnitOfWork.cs",
+              "ToolTip": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\Reposistory\\UnitOfWork.cs",
+              "RelativeToolTip": "Travel.Web\\Reposistory\\UnitOfWork.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAABkAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T14:55:38.977Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IFlightBookingService.cs",
+              "DocumentMoniker": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\Services\\IFlightBookingService.cs",
+              "RelativeDocumentMoniker": "Travel.Web\\Services\\IFlightBookingService.cs",
+              "ToolTip": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\Services\\IFlightBookingService.cs",
+              "RelativeToolTip": "Travel.Web\\Services\\IFlightBookingService.cs",
+              "ViewState": "AgIAAE0AAAAAAAAAAAAiwFIAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-22T15:52:28.194Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Travel.Web\\Views\\Home\\Index.cshtml",
+              "ToolTip": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Travel.Web\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAAABAAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-15T14:04:22.519Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FlightService.cs",
+              "DocumentMoniker": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\Services\\FlightService.cs",
+              "RelativeDocumentMoniker": "Travel.Web\\Services\\FlightService.cs",
+              "ToolTip": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\Services\\FlightService.cs",
+              "RelativeToolTip": "Travel.Web\\Services\\FlightService.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAASwCYAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T15:22:02.917Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\Reposistory\\UserRepository.cs",
+              "RelativeDocumentMoniker": "Travel.Web\\Reposistory\\UserRepository.cs",
+              "ToolTip": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\Reposistory\\UserRepository.cs",
+              "RelativeToolTip": "Travel.Web\\Reposistory\\UserRepository.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAA2wA4AAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T14:54:17.884Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Travel.Web\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Travel.Web\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAKEAAAAAAAAAAAAiwKYAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T16:16:51.187Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "AiSearch_bar.cshtml",
+              "DocumentMoniker": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\Views\\Home\\PartialViews\\AiSearch_bar.cshtml",
+              "RelativeDocumentMoniker": "Travel.Web\\Views\\Home\\PartialViews\\AiSearch_bar.cshtml",
+              "ToolTip": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\Views\\Home\\PartialViews\\AiSearch_bar.cshtml",
+              "RelativeToolTip": "Travel.Web\\Views\\Home\\PartialViews\\AiSearch_bar.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-16T15:44:51.061Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LocationService.cs",
+              "DocumentMoniker": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\Services\\LocationService.cs",
+              "RelativeDocumentMoniker": "Travel.Web\\Services\\LocationService.cs",
+              "ToolTip": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\Services\\LocationService.cs",
+              "RelativeToolTip": "Travel.Web\\Services\\LocationService.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAlwCUAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-20T07:48:10.542Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BookingsPlugin.cs",
+              "DocumentMoniker": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\Plugins\\BookingsPlugin.cs",
+              "RelativeDocumentMoniker": "Travel.Web\\Plugins\\BookingsPlugin.cs",
+              "ToolTip": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\Plugins\\BookingsPlugin.cs",
+              "RelativeToolTip": "Travel.Web\\Plugins\\BookingsPlugin.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAAFEAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T16:18:05.946Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "CacheService.cs",
+              "DocumentMoniker": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\Infrastructure\\CacheService.cs",
+              "RelativeDocumentMoniker": "Travel.Web\\Infrastructure\\CacheService.cs",
+              "ToolTip": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\Infrastructure\\CacheService.cs",
+              "RelativeToolTip": "Travel.Web\\Infrastructure\\CacheService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAcAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T15:06:59.08Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Travel.Web",
+              "DocumentMoniker": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\Travel.Web.csproj",
+              "RelativeDocumentMoniker": "Travel.Web\\Travel.Web.csproj",
+              "ToolTip": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\Travel.Web.csproj",
+              "RelativeToolTip": "Travel.Web\\Travel.Web.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-04-22T15:49:48.583Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "serviceDependencies.json",
+              "DocumentMoniker": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\Properties\\serviceDependencies.json",
+              "RelativeDocumentMoniker": "Travel.Web\\Properties\\serviceDependencies.json",
+              "ToolTip": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\Properties\\serviceDependencies.json",
+              "RelativeToolTip": "Travel.Web\\Properties\\serviceDependencies.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-22T15:50:38.381Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "launchSettings.json",
               "DocumentMoniker": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "Travel.Web\\Properties\\launchSettings.json",
@@ -98,11 +372,36 @@
               "RelativeToolTip": "Travel.Web\\Properties\\launchSettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-04-16T14:46:32.825Z"
+              "WhenOpened": "2025-04-16T14:46:32.825Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 12,
+              "Title": "Booking.cs",
+              "DocumentMoniker": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\Models\\Booking.cs",
+              "RelativeDocumentMoniker": "Travel.Web\\Models\\Booking.cs",
+              "ToolTip": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\Models\\Booking.cs",
+              "RelativeToolTip": "Travel.Web\\Models\\Booking.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAUAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T14:49:18.957Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Travel.Web\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Travel.Web\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-15T14:08:41.513Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\appsettings.json",
               "RelativeDocumentMoniker": "Travel.Web\\appsettings.json",
@@ -110,72 +409,203 @@
               "RelativeToolTip": "Travel.Web\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAACzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-04-16T14:46:25.746Z"
+              "WhenOpened": "2025-04-18T10:34:43.221Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "BookingsPlugin.cs",
-              "DocumentMoniker": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\BookingsPlugin.cs",
-              "RelativeDocumentMoniker": "Travel.Web\\BookingsPlugin.cs",
-              "ToolTip": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\BookingsPlugin.cs",
-              "RelativeToolTip": "Travel.Web\\BookingsPlugin.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAASAAAAAAAAAA==",
+              "DocumentIndex": 18,
+              "Title": "FlightSegment.cs",
+              "DocumentMoniker": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\Models\\FlightSegment.cs",
+              "RelativeDocumentMoniker": "Travel.Web\\Models\\FlightSegment.cs",
+              "ToolTip": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\Models\\FlightSegment.cs",
+              "RelativeToolTip": "Travel.Web\\Models\\FlightSegment.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAUAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-15T16:18:05.946Z"
+              "WhenOpened": "2025-04-17T14:47:24.885Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "Travel.Web\\Controllers\\HomeController.cs",
-              "ToolTip": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "Travel.Web\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAKAAAAAAAAAA==",
+              "DocumentIndex": 19,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\Reposistory\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "Travel.Web\\Reposistory\\ApplicationDbContext.cs",
+              "ToolTip": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\Reposistory\\ApplicationDbContext.cs",
+              "RelativeToolTip": "Travel.Web\\Reposistory\\ApplicationDbContext.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAIBQwCcAAABNAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-15T16:16:51.187Z"
+              "WhenOpened": "2025-04-17T15:44:01.162Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\Program.cs",
-              "RelativeDocumentMoniker": "Travel.Web\\Program.cs",
-              "ToolTip": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\Program.cs",
-              "RelativeToolTip": "Travel.Web\\Program.cs",
-              "ViewState": "AgIAACoAAAAAAAAAAAAAAEMAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 20,
+              "Title": "Flight.cs",
+              "DocumentMoniker": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\Models\\Flight.cs",
+              "RelativeDocumentMoniker": "Travel.Web\\Models\\Flight.cs",
+              "ToolTip": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\Models\\Flight.cs",
+              "RelativeToolTip": "Travel.Web\\Models\\Flight.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-15T15:04:14.571Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-17T14:46:59.55Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "site.css",
-              "DocumentMoniker": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\wwwroot\\css\\site.css",
-              "RelativeDocumentMoniker": "Travel.Web\\wwwroot\\css\\site.css",
-              "ToolTip": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\wwwroot\\css\\site.css",
-              "RelativeToolTip": "Travel.Web\\wwwroot\\css\\site.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-04-15T14:46:15.305Z"
+              "DocumentIndex": 21,
+              "Title": "Country.cs",
+              "DocumentMoniker": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\Models\\Country.cs",
+              "RelativeDocumentMoniker": "Travel.Web\\Models\\Country.cs",
+              "ToolTip": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\Models\\Country.cs",
+              "RelativeToolTip": "Travel.Web\\Models\\Country.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAABZwCwAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T14:50:49.926Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 27,
+              "Title": "FlightCompany.cs",
+              "DocumentMoniker": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\Models\\FlightCompany.cs",
+              "RelativeDocumentMoniker": "Travel.Web\\Models\\FlightCompany.cs",
+              "ToolTip": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\Models\\FlightCompany.cs",
+              "RelativeToolTip": "Travel.Web\\Models\\FlightCompany.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAUwA4AAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T14:46:31.153Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "User.cs",
+              "DocumentMoniker": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\Models\\User.cs",
+              "RelativeDocumentMoniker": "Travel.Web\\Models\\User.cs",
+              "ToolTip": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\Models\\User.cs",
+              "RelativeToolTip": "Travel.Web\\Models\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T14:46:02.181Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "TravelClass.cs",
+              "DocumentMoniker": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\Models\\TravelClass.cs",
+              "RelativeDocumentMoniker": "Travel.Web\\Models\\TravelClass.cs",
+              "ToolTip": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\Models\\TravelClass.cs",
+              "RelativeToolTip": "Travel.Web\\Models\\TravelClass.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T14:48:05.687Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Passenger.cs",
+              "DocumentMoniker": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\Models\\Passenger.cs",
+              "RelativeDocumentMoniker": "Travel.Web\\Models\\Passenger.cs",
+              "ToolTip": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\Models\\Passenger.cs",
+              "RelativeToolTip": "Travel.Web\\Models\\Passenger.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAUwAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T14:50:08.654Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Payment.cs",
+              "DocumentMoniker": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\Models\\Payment.cs",
+              "RelativeDocumentMoniker": "Travel.Web\\Models\\Payment.cs",
+              "ToolTip": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\Models\\Payment.cs",
+              "RelativeToolTip": "Travel.Web\\Models\\Payment.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T14:50:29.298Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "FlightSegmentClass.cs",
+              "DocumentMoniker": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\Models\\FlightSegmentClass.cs",
+              "RelativeDocumentMoniker": "Travel.Web\\Models\\FlightSegmentClass.cs",
+              "ToolTip": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\Models\\FlightSegmentClass.cs",
+              "RelativeToolTip": "Travel.Web\\Models\\FlightSegmentClass.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T14:49:00.34Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "BookingSegment.cs",
+              "DocumentMoniker": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\Models\\BookingSegment.cs",
+              "RelativeDocumentMoniker": "Travel.Web\\Models\\BookingSegment.cs",
+              "ToolTip": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\Models\\BookingSegment.cs",
+              "RelativeToolTip": "Travel.Web\\Models\\BookingSegment.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAYwAcAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T14:49:45.694Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "ErrorViewModel.cs",
+              "DocumentMoniker": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\Models\\ErrorViewModel.cs",
+              "RelativeDocumentMoniker": "Travel.Web\\Models\\ErrorViewModel.cs",
+              "ToolTip": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\Models\\ErrorViewModel.cs",
+              "RelativeToolTip": "Travel.Web\\Models\\ErrorViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-16T15:26:28.358Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "Repository.cs",
+              "DocumentMoniker": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\Reposistory\\Repository.cs",
+              "RelativeDocumentMoniker": "Travel.Web\\Reposistory\\Repository.cs",
+              "ToolTip": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\Reposistory\\Repository.cs",
+              "RelativeToolTip": "Travel.Web\\Reposistory\\Repository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwA0AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T14:53:21.625Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "IRepository.cs",
+              "DocumentMoniker": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\Reposistory\\IRepository.cs",
+              "RelativeDocumentMoniker": "Travel.Web\\Reposistory\\IRepository.cs",
+              "ToolTip": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\Reposistory\\IRepository.cs",
+              "RelativeToolTip": "Travel.Web\\Reposistory\\IRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T14:52:52.322Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "FlightRoute.cs",
+              "DocumentMoniker": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\DTO\\FlightRoute.cs",
+              "RelativeDocumentMoniker": "Travel.Web\\DTO\\FlightRoute.cs",
+              "ToolTip": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\DTO\\FlightRoute.cs",
+              "RelativeToolTip": "Travel.Web\\DTO\\FlightRoute.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T15:20:03.301Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
               "Title": "_BusesPartial.cshtml",
               "DocumentMoniker": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\Views\\Home\\PartialViews\\_BusesPartial.cshtml",
               "RelativeDocumentMoniker": "Travel.Web\\Views\\Home\\PartialViews\\_BusesPartial.cshtml",
               "ToolTip": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\Views\\Home\\PartialViews\\_BusesPartial.cshtml",
               "RelativeToolTip": "Travel.Web\\Views\\Home\\PartialViews\\_BusesPartial.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-04-15T14:29:07.11Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 34,
               "Title": "_TrainPartial.cshtml",
               "DocumentMoniker": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\Views\\Home\\PartialViews\\_TrainPartial.cshtml",
               "RelativeDocumentMoniker": "Travel.Web\\Views\\Home\\PartialViews\\_TrainPartial.cshtml",
@@ -187,19 +617,43 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "Travel.Web\\Views\\Home\\Index.cshtml",
-              "ToolTip": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "Travel.Web\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-15T14:04:22.519Z"
+              "DocumentIndex": 35,
+              "Title": ".dockerignore",
+              "DocumentMoniker": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\.dockerignore",
+              "RelativeDocumentMoniker": ".dockerignore",
+              "ToolTip": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\.dockerignore",
+              "RelativeToolTip": ".dockerignore",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-04-16T15:28:04.864Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 36,
+              "Title": "Travel.Web.csproj",
+              "DocumentMoniker": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\Travel.Web.csproj",
+              "RelativeDocumentMoniker": "Travel.Web\\Travel.Web.csproj",
+              "ToolTip": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\Travel.Web.csproj",
+              "RelativeToolTip": "Travel.Web\\Travel.Web.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-04-16T14:46:55.708Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "site.css",
+              "DocumentMoniker": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "Travel.Web\\wwwroot\\css\\site.css",
+              "ToolTip": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "Travel.Web\\wwwroot\\css\\site.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-04-15T14:46:15.305Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
               "Title": "Dockerfile",
               "DocumentMoniker": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\Dockerfile",
               "RelativeDocumentMoniker": "Travel.Web\\Dockerfile",
@@ -211,19 +665,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Travel.Web\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Travel.Web\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAABAAAAAAAAAAAAAQwCMAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-15T14:08:41.513Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 39,
               "Title": "_ViewImports.cshtml",
               "DocumentMoniker": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\Views\\_ViewImports.cshtml",
               "RelativeDocumentMoniker": "Travel.Web\\Views\\_ViewImports.cshtml",
@@ -235,7 +677,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 40,
               "Title": "_ViewStart.cshtml",
               "DocumentMoniker": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\Travel.Web\\Views\\_ViewStart.cshtml",
               "RelativeDocumentMoniker": "Travel.Web\\Views\\_ViewStart.cshtml",
@@ -247,13 +689,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 41,
               "Title": "travel.api.csproj",
               "DocumentMoniker": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\travel.api\\travel.api.csproj",
               "RelativeDocumentMoniker": "travel.api\\travel.api.csproj",
               "ToolTip": "D:\\Projects\\GenAI\\SmartTravelAI\\travel.api\\travel.api\\travel.api.csproj",
               "RelativeToolTip": "travel.api\\travel.api.csproj",
-              "ViewState": "AgIAABkAAAAAAAAAAAAAABQAAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAAAAAAAABRwBQAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2025-04-14T02:54:36.567Z"
             }

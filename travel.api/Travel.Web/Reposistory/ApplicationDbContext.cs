@@ -33,11 +33,11 @@
 
             // Specify schema names  
             modelBuilder.Entity<User>().ToTable("users", "flight");
-            modelBuilder.Entity<FlightCompany>().ToTable("flightCompanies", "flight");
+            modelBuilder.Entity<FlightCompany>().ToTable("flightcompanies", "flight");
             modelBuilder.Entity<Flight>().ToTable("flights", "flight");
-            modelBuilder.Entity<FlightSegment>().ToTable("flightSegments", "flight");
-            modelBuilder.Entity<TravelClass>().ToTable("travelClasses", "flight");
-            modelBuilder.Entity<FlightSegmentClass>().ToTable("flightSegmentClasses", "flight");
+            modelBuilder.Entity<FlightSegment>().ToTable("flightsegments", "flight");
+            modelBuilder.Entity<TravelClass>().ToTable("travelclasses", "flight");
+            modelBuilder.Entity<FlightSegmentClass>().ToTable("flightsegmentclasses", "flight");
             modelBuilder.Entity<Booking>().ToTable("bookings", "flight");
             modelBuilder.Entity<BookingSegment>().ToTable("bookingSegments", "flight");
             modelBuilder.Entity<Passenger>().ToTable("passengers", "flight");

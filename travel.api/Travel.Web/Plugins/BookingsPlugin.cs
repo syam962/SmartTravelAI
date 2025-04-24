@@ -1,6 +1,7 @@
 ﻿using Microsoft.SemanticKernel;
 using System.ComponentModel;
 using Travel.Web.Models;
+using Travel.Web.Models.DTOs;
 using Travel.Web.Services;
 
 public sealed class BookingsPlugin
@@ -8,71 +9,79 @@ public sealed class BookingsPlugin
 
 
     private readonly IFlightService _flightService;
-    public BookingsPlugin(IFlightService flightService)
+    private readonly ILocationService _locationService;
+    private readonly IFlightBookingService _flightBookingService;
+
+    [KernelFunction("Cities")]
+    [Description("list of all cities with cityid,cityname,stateid,timezone")]
+    public async Task<List<CityDTO>> AllOperationalCities()
+
+    {
+
+        var res = await _locationService.GetAllCitiesAsync();
+        List<CityDTO> result = new List<CityDTO>();
+       
+
+        return res.ToList();
+    }
+    public BookingsPlugin(IFlightService flightService, ILocationService location)
 
     {
         _flightService = flightService;
+        _locationService = location;
 
 
     }
     [KernelFunction("FlightLists")]
-    [Description("List of flight between two cities.Need source and destination city id")]
-    public async Task<List<Flight>> FlightList(
-        [Description("source city Id")] int sourceCityId,
-        [Description("Destination city Id")] int destinationCityId)
+    [Description("Get list of all flights available within a date range")]
+    public async Task<List<FlightSegmentDTO>> FlightList(
+        [Description("start date range")] DateTime startDate,
+        [Description("end date range")] DateTime endDate,
+        [Description("city flying from")] int flyingfromcity,
+        [Description("city flying to")] int flyingtoCity)
     {
-
-        var res = await _flightService.GetFlightsByCityAsync(sourceCityId, destinationCityId);
+        startDate = DateTime.SpecifyKind(startDate, DateTimeKind.Utc);
+        endDate = DateTime.SpecifyKind(endDate, DateTimeKind.Utc);
+        var res = await _flightService.GetSegmentsWithinDateRangeAsync(startDate, endDate, flyingfromcity, flyingtoCity);
 
         return res.ToList();
     }
 
-
-    [KernelFunction("BookTable")]
-    [Description("Books a new table at a restaurant")]
-    public async Task<string> BookTableAsync(
-        [Description("Name of the restaurant")] string restaurant,
-        [Description("The time in UTC")] DateTime dateTime,
-        [Description("Number of people in your party")] int partySize,
-        [Description("Customer name")] string customerName,
-        [Description("Customer email")] string customerEmail,
-        [Description("Customer phone number")] string customerPhone
+    [KernelFunction("BookFlight")]
+    [Description("This fucntion will return booking UI so return as follows  {viewModel:flightBooking,Model:{functionresponse}}")]
+    public async Task<BookingDTO> BookFlight(
+      [Description("Booking ID")] int bookingID,
+      [Description("User ID")] int userID,
+      [Description("Flight ID")] int flightID,
+      [Description("Return Flight ID (optional)")] int? returnFlightID,
+      [Description("Booking Date")] DateTime bookingDate,
+      [Description("Number of Passengers")] int numberOfPassengers,
+      [Description("Trip Type")] string tripType,
+      [Description("Class ID")] int classID
     )
     {
-        Console.WriteLine($"System > Do you want to book a table at {restaurant} on {dateTime} for {partySize} people?");
-        Console.WriteLine("System > Please confirm by typing 'yes' or 'no'.");
-        Console.Write("User > ");
+        bookingDate = DateTime.SpecifyKind(bookingDate, DateTimeKind.Utc);
 
+        // Create a new booking object  
+        var booking = new BookingDTO
+        {
+            BookingID = bookingID,
+            UserID = userID,
+            FlightID = flightID,
+            ReturnFlightID = returnFlightID,
+            BookingDate = bookingDate,
+            NumberOfPassengers = numberOfPassengers,
+            TripType = tripType,
+            ClassID = classID
+        };
 
+        // Call the booking service to book the flight  
+       // var bookedFlights = await _flightBookingService.CreateBookingAsync(booking);
 
-        return "Booking Successfull";
+        // Return success message if booking is successful  
+        return booking;
     }
 
-    [KernelFunction]
-    [Description("List reservations booking at a restaurant.")]
-    public async Task<List<string>> ListReservationsAsync()
-    {
-        // Print the booking details to the console
-        List<string> result = new List<string>();
-        result.Add("Hotel Lemon tree");
-        result.Add("Hotel Azad");
 
 
-        return result;
-    }
-
-    [KernelFunction]
-    [Description("Cancels a reservation at a restaurant.")]
-    public async Task<string> CancelReservationAsync(
-        [Description("The appointment ID to cancel")] string appointmentId,
-        [Description("Name of the restaurant")] string restaurant,
-        [Description("The date of the reservation")] string date,
-        [Description("The time of the reservation")] string time,
-        [Description("Number of people in your party")] int partySize)
-    {
-        // Print the booking details to the console
-
-
-        return "Cancellation successful!";
-    }
 }

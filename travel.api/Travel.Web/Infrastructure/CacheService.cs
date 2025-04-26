@@ -5,7 +5,7 @@ namespace Travel.Web.Infrastructure
 {
     public interface ICacheService
     {
-        List<T> Get<T>(string cacheKey);
+        T Get<T>(string cacheKey);
         void Set<T>(string cacheKey, T item);
         void AddToExistingCache<T>(string cacheKey, T item);
     }
@@ -18,9 +18,9 @@ namespace Travel.Web.Infrastructure
         {
             _memoryCache = memoryCache;
         }
-        public List<T> Get<T>(string cacheKey)
+        public T Get<T>(string cacheKey)
         {
-            _memoryCache.TryGetValue(cacheKey, out List<T> cacheEntry);
+            _memoryCache.TryGetValue(cacheKey, out T cacheEntry);
             return cacheEntry;
         }
 
@@ -37,14 +37,14 @@ namespace Travel.Web.Infrastructure
 
         public void AddToExistingCache<T>(string cacheKey, T item)
         {
-            if (_memoryCache.TryGetValue(cacheKey, out List<T> existingItems))
+            if (_memoryCache.TryGetValue(cacheKey, out T existingItems))
             {
-                existingItems.Add(item);
+               // existingItems.Add(item);
                 _memoryCache.Set(cacheKey, existingItems);
             }
             else
             {
-                Set(cacheKey, new List<T> { item });
+                Set(cacheKey, item);
             }
         }
     }

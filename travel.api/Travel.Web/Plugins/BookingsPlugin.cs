@@ -42,44 +42,31 @@ public sealed class BookingsPlugin
     {
         startDate = DateTime.SpecifyKind(startDate, DateTimeKind.Utc);
         endDate = DateTime.SpecifyKind(endDate, DateTimeKind.Utc);
+        // Convert to UTC if necessary
+        if (startDate == endDate)
+        {
+            endDate = startDate.AddDays(1);
+        }
         var res = await _flightService.GetSegmentsWithinDateRangeAsync(startDate, endDate, flyingfromcity, flyingtoCity);
 
         return res.ToList();
     }
 
     [KernelFunction("BookFlight")]
-    [Description("This fucntion will return booking UI so return as follows  {viewModel:flightBooking,Model:{functionresponse}}")]
-    public async Task<BookingDTO> BookFlight(
-      [Description("Booking ID")] int bookingID,
-      [Description("User ID")] int userID,
-      [Description("Flight ID")] int flightID,
-      [Description("Return Flight ID (optional)")] int? returnFlightID,
-      [Description("Booking Date")] DateTime bookingDate,
-      [Description("Number of Passengers")] int numberOfPassengers,
-      [Description("Trip Type")] string tripType,
-      [Description("Class ID")] int classID
+    [Description("Book flight ticket for a given date,passenger count,SegmentId.SegmentId  can be get from FlightLists function")]
+    public async Task<string> BookFlight(
+     
+     
+      [Description("Segmnent ID. This is a required field")] int segmentID,
+    
+      [Description("Booking Date.This is a required field")] DateTime bookingDate,
+      [Description("Number of Passengers.This is a required field")] int numberOfPassengers
+      
     )
     {
-        bookingDate = DateTime.SpecifyKind(bookingDate, DateTimeKind.Utc);
+       
+        return "Please verify the booking details and confirm your booking.";
 
-        // Create a new booking object  
-        var booking = new BookingDTO
-        {
-            BookingID = bookingID,
-            UserID = userID,
-            FlightID = flightID,
-            ReturnFlightID = returnFlightID,
-            BookingDate = bookingDate,
-            NumberOfPassengers = numberOfPassengers,
-            TripType = tripType,
-            ClassID = classID
-        };
-
-        // Call the booking service to book the flight  
-       // var bookedFlights = await _flightBookingService.CreateBookingAsync(booking);
-
-        // Return success message if booking is successful  
-        return booking;
     }
 
 

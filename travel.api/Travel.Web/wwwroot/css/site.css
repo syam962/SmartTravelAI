@@ -29,3 +29,16 @@ body {
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
   text-align: start;
 }
+.chatresponse-container {
+    height: 600px;
+    font-family: 'Verdana', 'Courier New', Courier, monospace;
+    font-size: 14px;
+    color: #333;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+.min-height-800{
+    min-height:800px;
+}

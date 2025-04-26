@@ -11,6 +11,8 @@ namespace Travel.Web.Services
         Task<IEnumerable<FlightRoute>> SearchFlightsAsync(DateTime startDate, DateTime endDate, int sourceCityId, int destinationCityId, bool includeConnections);
         Task<IEnumerable<FlightDTO>> GetFlightsByCityAsync(int sourceCityId, int destinationCityId);
         Task<IEnumerable<FlightSegmentDTO>> GetSegmentsWithinDateRangeAsync(DateTime startDate, DateTime endDate, int sourceCityId, int destinationCityId);
+        Task<Flight> GetFlightDetailsBySegmentIdAsync(int segmentId);
+        Task<FlightSegment> GetFlightSegmentDetailsAsync(int segmentId);
     }
     public class FlightService : IFlightService
     {
@@ -33,10 +35,19 @@ namespace Travel.Web.Services
             var flights = await _unitOfWork.Flights.GetFlightsByCityAsync(sourceCityId, destinationCityId);
             return _mapper.Map<IEnumerable<FlightDTO>>(flights);
         }
-        public async Task<IEnumerable<FlightSegmentDTO>> GetSegmentsWithinDateRangeAsync(DateTime startDate, DateTime endDate,int sourcecity,int destinationCity)
+        public async Task<IEnumerable<FlightSegmentDTO>> GetSegmentsWithinDateRangeAsync(DateTime startDate, DateTime endDate, int sourcecity, int destinationCity)
         {
-            var segments = await _unitOfWork.FlightSegments.GetSegmentsWithinDateRangeAsync(startDate, endDate,sourcecity, destinationCity);
+            var segments = await _unitOfWork.FlightSegments.GetSegmentsWithinDateRangeAsync(startDate, endDate, sourcecity, destinationCity);
             return _mapper.Map<IEnumerable<FlightSegmentDTO>>(segments);
+        }
+
+        public async Task<Flight> GetFlightDetailsBySegmentIdAsync(int segmentId)
+        {
+            return await _unitOfWork.Flights.GetFlightDetailsBySegmentIdAsync(segmentId);
+        }
+        public async Task<FlightSegment> GetFlightSegmentDetailsAsync(int segmentId)
+        {
+            return await _unitOfWork.Flights.GetFlightSegmentDetailsAsync(segmentId);
         }
 
 

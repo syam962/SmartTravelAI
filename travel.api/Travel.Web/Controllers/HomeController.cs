@@ -11,6 +11,7 @@ using Travel.Web.Infrastructure;
 using Newtonsoft.Json;
 using System;
 using Microsoft.Extensions.AI;
+using Microsoft.AspNetCore.Mvc.ActionConstraints;
 
 namespace Travel.Web.Controllers
 {
@@ -20,12 +21,14 @@ namespace Travel.Web.Controllers
         private readonly Kernel _kernel;
         private readonly ILocationService _locationService;
         private ICacheService _cacheService;
-        public HomeController(ILogger<HomeController> logger, [FromKeyedServices("BookingsKernal")] Kernel kernel, ILocationService locationService, ICacheService cacheService)
+        private readonly IFlightService _flightService;
+        public HomeController(ILogger<HomeController> logger, [FromKeyedServices("BookingsKernal")] Kernel kernel, ILocationService locationService, ICacheService cacheService, IFlightService flightService)
         {
             _logger = logger;
             _kernel = kernel;
             _locationService = locationService;
             _cacheService = cacheService;
+            _flightService = flightService;
         }
 
         /*  public async Task<IActionResult> IndexAsync()
@@ -133,38 +136,76 @@ namespace Travel.Web.Controllers
 
             try
             {
-                // Initialize chat history
-                var chatHistory = new ChatHistory();
-
-                List<ChatMessageContent> chat_his = _cacheService.Get<ChatMessageContent>("chat_history");
-
-                if (chat_his != null)
+                // Initialize chat history  
+                ChatHistory chatHistory;
+                Dictionary<string, object> functionArgs = new Dictionary<string, object>();
+                var history = _cacheService.Get<ChatHistory>("chat_history");
+                if (history == null)
                 {
-                    foreach (var item in chat_his)
-                        chatHistory.AddMessage(item.Role, item?.Content!);
+                    chatHistory = new ChatHistory();
                 }
-
-                // Get chat completion service
+                else
+                {
+                    chatHistory = history;
+                }
+                string lastfunctionCalled = string.Empty;
                 var chatCompletionService = _kernel.GetRequiredService<IChatCompletionService>();
 
-                // Add the user's input to the chat history
+                // Add the user's input to the chat history  
                 chatHistory.AddUserMessage(query.Query);
+                string chatResult = string.Empty;
 
-                // Enable auto function calling
+                // Enable auto function calling  
                 var executionSettings = new OpenAIPromptExecutionSettings
                 {
-                    FunctionChoiceBehavior = FunctionChoiceBehavior.Auto()
+                    FunctionChoiceBehavior = FunctionChoiceBehavior.Auto(autoInvoke: false)
                 };
 
-                // Get the result from the AI
-                var result = await chatCompletionService.GetChatMessageContentAsync(chatHistory, executionSettings, _kernel);
+                while (true)
+                {
+                    // Get the result from the AI  
+                    var result = await chatCompletionService.GetChatMessageContentAsync(chatHistory, executionSettings, _kernel);
+
+                    if (result.Content is not null)
+                    {
+                        chatResult = result.Content;
+                        break;
+                    }
+
+                    chatHistory.Add(result);
+                    IEnumerable<Microsoft.SemanticKernel.FunctionCallContent> functionCalls = Microsoft.SemanticKernel.FunctionCallContent.GetFunctionCalls(result);
+                    foreach (Microsoft.SemanticKernel.FunctionCallContent functionCall in functionCalls)
+                    {
+                        try
+                        {
+                            lastfunctionCalled = functionCall.FunctionName.ToLower();
+                            var args = functionCall.Arguments;
+                            foreach (var arg in args)
+                            {
+                                functionArgs.Add(arg.Key, arg.Value);
+                            }
+                            // Invoking the function  
+                            Microsoft.SemanticKernel.FunctionResultContent resultContent = await functionCall.InvokeAsync(_kernel);
+
+                            // Adding the function result to the chat history  
+                            chatHistory.Add(resultContent.ToChatMessage());
+                        }
+                        catch (Exception ex)
+                        {
+                            // Adding function exception to the chat history  
+                            chatHistory.Add(new Microsoft.SemanticKernel.FunctionResultContent(functionCall, ex).ToChatMessage());
+                        }
+                    }
+                }
 
 
+                _cacheService.AddToExistingCache("chat_history", chatHistory);
 
-                _cacheService.AddToExistingCache("chat_history", result);
-
-                // Return the result as JSON
-                return Json(new { success = true, data = result.Content });
+                ResponseObject objResult = new ResponseObject();
+                objResult.ChatSummary = chatResult;
+                objResult.FunctionName = lastfunctionCalled;
+                objResult.FunctionArgs = functionArgs;
+                return Json(new { success = true, data = objResult });
             }
             catch (Exception ex)
             {
@@ -173,12 +214,27 @@ namespace Travel.Web.Controllers
             }
         }
 
+        public async Task<IActionResult> LoadFlightBooking(int segmentID)
+        {
+            // Get the flight details using the flightID
+            FlightSegment flightDetails = await _flightService.GetFlightSegmentDetailsAsync(segmentID);
+            return PartialView("flight_booking", flightDetails);
+        }
+
     }
 
     public class ReqObject
     {
         public string Query { get; set; }
     }
+    public class ResponseObject
+    {
+        public string ChatSummary { get; set; }
 
+        public string FunctionName { get; set; }
+        public string segmentId { get; set; }
+
+        public Dictionary<string, object> FunctionArgs { get; set; }
+    }
 
 }

@@ -2,98 +2,53 @@
  ViewData["Title"] = "Home Page";  
 }  
 
-<div class="container-fluid">
+<div class="container-fluid min-height-800">
    <div class="d-flex align-items-center">
-       <form id="search-form" class="d-flex w-100">
-           <input type="text" id="query" name="query" class="form-control me-2" placeholder="Enter search text">
-           <button type="button" id="search-button" class="btn btn-primary">
-               <i class="bi bi-send"></i> Search
-           </button>
-       </form>
+       <form id="search-form" class="d-flex w-100 position-relative">
+                 <input type="text" id="query" name="query" class="form-control me-2" placeholder="Enter search text">
+                 <button type="button" id="clear-button" class="btn btn-light border-0 position-absolute" style="right: 100px; top: 50%; transform: translateY(-50%); display: none;">
+                     <i class="bi bi-x-circle"></i>
+                 </button>
+                 <button type="button" id="search-button" class="btn btn-primary">
+                     <i class="bi bi-send"></i> Search
+                 </button>
+             </form>
    </div>
 
-   <div id="search-results" class="mt-3">
-    
-<pre style="height:600px; font-family:'Verdana', 'Courier New', Courier, monospace; font-size: 14px; color: #333; background-color: #f9f9f9; padding: 10px; border: 1px solid #ddd; border-radius: 5px;">  
-   Here are the available flights between Trivandrum (Thiruvananthapuram) and Bengaluru between 25 April and 01 May 2025:  
-
-### Flights on 25 April 2025  
-- **Departure:** 12:47 PM IST  
- **Arrival:** 2:47 PM IST  
- **Prices:**  
- - Economy: ₹3,443  
- - Business: ₹8,282  
- - First Class: ₹14,940  
-
-### Flights on 27 April 2025  
-- **Departure:** 12:47 PM IST  
- **Arrival:** 2:47 PM IST  
- **Prices:**  
- - Economy: ₹2,721  
- - Business: ₹7,652  
- - First Class: ₹15,399  
-
-- **Departure:** 8:47 PM IST  
- **Arrival:** 10:47 PM IST  
- **Prices:**  
- - Economy: ₹3,055  
- - Business: ₹7,937  
- - First Class: ₹14,671  
-
-### Flights on 28 April 2025  
-- **Departure:** 8:47 AM IST  
- **Arrival:** 11:47 AM IST  
- **Prices:**  
- - Economy: ₹3,029  
- - Business: ₹7,651  
- - First Class: ₹14,549  
-
-- **Departure:** 4:47 PM IST  
- **Arrival:** 6:47 PM IST  
- **Prices:**  
- - Economy: ₹2,685  
- - Business: ₹7,733  
- - First Class: ₹14,579  
-
-### Flights on 29 April 2025  
-- **Departure:** 8:47 AM IST  
- **Arrival:** 10:47 AM IST  
- **Prices:**  
- - Economy: ₹3,301  
- - Business: ₹7,623  
- - First Class: ₹14,528  
-
-- **Departure:** 8:47 AM IST  
- **Arrival:** 12:47 PM IST  
- **Prices:**  
- - Economy: ₹2,886  
- - Business: ₹7,571  
- - First Class: ₹15,289  
-
-### Flights on 01 May 2025  
-- **Departure:** 12:47 AM IST  
- **Arrival:** 2:47 AM IST  
- **Prices:**  
- - Economy: ₹2,786  
- - Business: ₹8,258  
- - First Class: ₹14,530  
-
-- **Departure:** 12:47 AM IST  
- **Arrival:** 4:47 AM IST  
- **Prices:**  
- - Economy: ₹3,484  
- - Business: ₹7,802  
- - First Class: ₹15,437  
-
-Please let me know if you need further assistance or details!  
-</pre>
+   <div id="search-results-container" class="mt-3">
+       <div id="loader-sec"></div>
+        <div id="partialViewContainer" class="my-3">
+            
+        </div>
+        <div class="search-results"></div>
    </div>
 </div>
 
 @section Scripts {
    <script>
+       const queryInput = document.getElementById('query');
+       const clearButton = document.getElementById('clear-button');
+
+       queryInput.addEventListener('input', function () {
+           if (queryInput.value.trim() !== '') {
+               clearButton.style.display = 'block';
+           } else {
+               clearButton.style.display = 'none';
+           }
+       });
+
+       clearButton.addEventListener('click', function () {
+           queryInput.value = '';
+           clearButton.style.display = 'none';
+           queryInput.focus();
+       });
+
        document.getElementById('search-button').addEventListener('click', function () {
-           const query = document.getElementById('query').value;
+           const query = queryInput.value;
+           const loaderSec = document.getElementById('loader-sec');
+           const resultsContainer = document.getElementById('search-results');
+           // Show loading spinner
+           loaderSec.innerHTML = '<div class="d-flex justify-content-center my-3"><div class="spinner-border text-primary" role="status"><span class="visually-hidden">Loading...</span></div></div>';
 
            fetch('/Home/SearchAI', {
                method: 'POST',
@@ -104,23 +59,37 @@ Please let me know if you need further assistance or details!
            })
            .then(response => response.json())
            .then(data => {
-               const resultsContainer = document.getElementById('search-results');
-               resultsContainer.innerHTML = '';
+               // Remove loading spinner
+               loaderSec.innerHTML = '';
 
-               if (data ) {
-                  
-                       const div = document.createElement('pre');
-                        div.textContent = data.data;
-                       resultsContainer.appendChild(div);
-                  
+               if (data.data.functionName == "bookflight") {
+                   const segmentID = data.data.functionArgs.segmentID;
+                   loadBooking(segmentID);
                } else {
-                   resultsContainer.textContent = 'No results found.';
+                   const div = document.createElement('pre');
+                   div.classList = 'chatresponse-container';
+                   div.textContent = data.data.chatSummary;
+                   resultsContainer.prepend(div);
                }
            })
            .catch(error => {
                console.error('Error:', error);
-               document.getElementById('search-results').textContent = 'An error occurred while fetching results.';
+               loaderSec.innerHTML = '';
+               resultsContainer.innerHTML = 'An error occurred while fetching results.';
            });
        });
+
+       function loadBooking(segmentID) {
+           $.ajax({
+               url: '@Url.Action("LoadFlightBooking", "Home")' + '?segmentID=' + segmentID,
+               type: 'GET',
+               success: function (data) {
+                   $('#partialViewContainer').html(data);
+               },
+               error: function (xhr, status, error) {
+                   console.error("Error loading partial view:", error);
+               }
+           });
+       }
    </script>
 }

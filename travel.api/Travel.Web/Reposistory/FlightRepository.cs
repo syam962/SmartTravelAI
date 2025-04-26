@@ -10,6 +10,9 @@ namespace Travel.Web.Reposistory
         Task<IEnumerable<Flight>> SearchFlightsAsync(DateTime startDate, DateTime endDate, int sourceCityId, int destinationCityId);
 
         Task<IEnumerable<FlightRoute>> SearchFlightsAsync(DateTime startDate, DateTime endDate, int sourceCityId, int destinationCityId, bool includeConnections);
+        Task<Flight> GetFlightDetailsBySegmentIdAsync(int segmentId);
+        Task<FlightSegment> GetFlightSegmentDetailsAsync(int segmentId);
+
 
     }
 
@@ -89,6 +92,23 @@ namespace Travel.Web.Reposistory
 
             // Combine direct and connecting routes
             return directRoutes.Concat(connectingRoutes);
+        }
+        public async Task<Flight> GetFlightDetailsBySegmentIdAsync(int segmentId)
+        {
+            return await _context.Flights
+                .Include(f => f.FlightSegments)
+                .ThenInclude(fs => fs.SegmentClasses)
+                .FirstOrDefaultAsync(f => f.FlightSegments.Any(fs => fs.SegmentID == segmentId));
+        }
+       
+        public async Task<FlightSegment> GetFlightSegmentDetailsAsync(int segmentId)
+        {
+            return await _context.FlightSegments
+                .Include(fs => fs.Flight)
+                .ThenInclude(f => f.FlightCompany)
+                .Include(fs => fs.SegmentSourceCity)
+                .Include(fs => fs.SegmentDestinationCity)
+                .FirstOrDefaultAsync(fs => fs.SegmentID == segmentId);
         }
 
     }

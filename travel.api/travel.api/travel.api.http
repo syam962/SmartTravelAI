@@ -1,0 +1,6 @@
+@travel.api_HostAddress = http://localhost:5181
+
+GET {{travel.api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

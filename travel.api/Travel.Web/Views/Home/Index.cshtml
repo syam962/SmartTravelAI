@@ -20,7 +20,7 @@
         <div id="partialViewContainer" class="my-3">
             
         </div>
-        <div class="search-results"></div>
+        <div id="search-results"></div>
    </div>
 </div>
 
@@ -84,6 +84,7 @@
                url: '@Url.Action("LoadFlightBooking", "Home")' + '?segmentID=' + segmentID,
                type: 'GET',
                success: function (data) {
+                     $('#partialViewContainer').show()
                    $('#partialViewContainer').html(data);
                },
                error: function (xhr, status, error) {

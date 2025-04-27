@@ -39,7 +39,7 @@
             modelBuilder.Entity<TravelClass>().ToTable("travelclasses", "flight");
             modelBuilder.Entity<FlightSegmentClass>().ToTable("flightsegmentclasses", "flight");
             modelBuilder.Entity<Booking>().ToTable("bookings", "flight");
-            modelBuilder.Entity<BookingSegment>().ToTable("bookingSegments", "flight");
+            modelBuilder.Entity<BookingSegment>().ToTable("bookingsegments", "flight");
             modelBuilder.Entity<Passenger>().ToTable("passengers", "flight");
             modelBuilder.Entity<Payment>().ToTable("payments", "flight");
             modelBuilder.Entity<Country>().ToTable("countries", "common");

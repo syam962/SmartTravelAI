@@ -10,9 +10,9 @@ namespace Travel.Web.Services
 {
     public interface IFlightBookingService
     {
-        Task<Booking> CreateBookingAsync(Booking booking);
-       Task<Booking> GetBookingByIdAsync(int bookingId);
-       // Task<IEnumerable<Booking>> GetBookingsByUserIdAsync(int userId);
+        Task CreateBookingAsync(int segmentId, int passengerCount);
+        Task<Booking> GetBookingByIdAsync(int bookingId);
+
         Task<bool> UpdateBookingAsync(Booking booking);
         Task<bool> DeleteBookingAsync(int bookingId);
     }
@@ -25,22 +25,40 @@ namespace Travel.Web.Services
         public FlightBookingService(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
-            
+
         }
 
-        public async Task<Booking> CreateBookingAsync(Booking booking)
+        public async Task CreateBookingAsync(int segmentId, int passengerCount = 1)
         {
-            if (booking == null)
-                throw new ArgumentNullException(nameof(booking));
+            // Retrieve the flight segment details
+            var flightSegment = await _unitOfWork.FlightSegments.GetByIdAsync(segmentId);
+            if (flightSegment == null)
+                throw new InvalidOperationException("Flight segment not found.");
 
-            // Validate flight availability
-            var flight = await _unitOfWork.Flights.GetByIdAsync(booking.FlightID);
-            if (flight == null)
-                throw new InvalidOperationException("Flight not found.");
+        
 
-            // Add booking
-            await _unitOfWork.Bookings.AddAsync(booking);
-            return booking;
+            Booking booking = new Booking
+            {
+                FlightID = flightSegment.FlightID,
+
+                BookingDate = DateTime.UtcNow,
+                NumberOfPassengers = passengerCount,
+                ClassID = 1,// Default to 1 passenger
+                TripType= "OneWay", // Default to OneWay
+                UserID=1
+
+            };
+            BookingSegment segment = new BookingSegment
+            {
+                SegmentID = segmentId,
+                PassengerCount = passengerCount,
+                ClassID = 1,
+               
+
+            };
+            await _unitOfWork.Bookings.AddBookingAsync(booking, new List<BookingSegment> { segment });
+
+
         }
 
         public async Task<Booking> GetBookingByIdAsync(int bookingId)
@@ -48,10 +66,7 @@ namespace Travel.Web.Services
             return await _unitOfWork.Bookings.GetByIdAsync(bookingId);
         }
 
-      /*  public async Task<IEnumerable<Booking>> GetBookingsByUserIdAsync(int userId)
-        {
-            return await _bookingRepository.FindAsync(b => b.UserID == userId);
-        }*/
+
 
         public async Task<bool> UpdateBookingAsync(Booking booking)
         {

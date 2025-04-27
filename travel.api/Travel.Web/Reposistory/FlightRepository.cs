@@ -111,6 +111,8 @@ namespace Travel.Web.Reposistory
                 .FirstOrDefaultAsync(fs => fs.SegmentID == segmentId);
         }
 
+         
+
     }
 
 }

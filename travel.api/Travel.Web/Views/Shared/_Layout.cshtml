@@ -20,8 +20,29 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="/offers" routerLinkActive="active">Offers</a>
+                       <a class="nav-link" href="#" onclick="loadPartialView('home/LoadFlightBooking?segmentID=40')">BookSegment</a>
                     </li>
+                    <script>
+                       function loadPartialView(url) {
+                           fetch(url, {
+                               method: 'GET',
+                               headers: {
+                                   'X-Requested-With': 'XMLHttpRequest'
+                               }
+                           })
+                           .then(response => {
+                               if (response.ok) {
+                                   return response.text();
+                               } else {
+                                   throw new Error('Failed to load partial view.');
+                               }
+                           })
+                           .then(html => {
+                               document.querySelector('.container-fluid').innerHTML = html;
+                           })
+                           .catch(error => console.error(error));
+                       }
+                    </script>
                     <li class="nav-item">
                         <a class="nav-link" routerLink="/customer-care" routerLinkActive="active">Customer Care</a>
                     </li>
@@ -46,6 +67,58 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script>
+        function  BookFlightClick(segmentID) {
+             
+
+                 
+                    fetch('/Booking/BookFlight', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ segmentID: segmentID })
+                    })
+                    .then(response => {
+                        if (response.ok) {
+                            // Create a dynamic div with a green tick and success message
+                            const successHtml = `
+                                <div id="pv_flight_booking_alert" style="position: fixed; top: 20%; right: 50%; background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; padding: 15px; border-radius: 5px; display: flex; align-items: center; z-index: 1050;">
+                                    <i class="bi bi-check-circle-fill" style="font-size: 1.5rem; margin-right: 10px;"></i>
+                                    <span>Booking Successful!</span>
+                                </div>
+                            `;
+
+                            document.body.insertAdjacentHTML('beforeend', successHtml);
+                             const bookingDiv = document.getElementById('pv_flight_booking');
+                                if (bookingDiv) {
+                                    bookingDiv.style.transition = 'opacity 0.5s';
+                                    bookingDiv.style.opacity = '0';
+
+                                }
+
+                                setTimeout(() => {
+                                            document.getElementById('pv_flight_booking_alert').style.display='none';
+                                        }, 5000);
+                            setTimeout(() => {
+                               
+                                const partialViewContainer = document.getElementById('partialViewContainer');
+                                if (partialViewContainer) {
+                                    partialViewContainer.style.display = 'none';
+                                    
+                                }
+                            }, 2000); // Display for 2 seconds
+                        } else {
+                            throw new Error('Error booking flight');
+                        }
+                    })
+                    .catch(error => {
+                        alert('Error booking flight: ' + error.message);
+                    });
+               
+             }
+
+    </script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

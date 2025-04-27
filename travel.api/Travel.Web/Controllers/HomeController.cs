@@ -221,6 +221,7 @@ namespace Travel.Web.Controllers
             return PartialView("flight_booking", flightDetails);
         }
 
+
     }
 
     public class ReqObject

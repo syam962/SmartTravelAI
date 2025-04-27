@@ -1,49 +1,58 @@
 @model FlightSegment
-<div class="container mt-4">  
-  <div class="card shadow-sm">  
-      <div class="card-header bg-primary text-white">  
-          <h5 class="card-title mb-0">Flight Details</h5>  
-      </div>  
-      <div class="card-body">  
-          <div class="row mb-3">  
-              <div class="col-md-6">  
-                  <label class="form-label fw-bold">Flight Name:</label>  
-                  <p class="form-control-plaintext">@Model.Flight.FlightCompany.CompanyName</p>  
-              </div>  
-              <div class="col-md-6">  
-                  <label class="form-label fw-bold">Source City:</label>  
-                  <p class="form-control-plaintext">@Model.SegmentSourceCity.CityName</p>  
-              </div>  
-          </div>  
-          <div class="row mb-3">  
-              <div class="col-md-6">  
-                  <label class="form-label fw-bold">Destination:</label>
-                   <p class="form-control-plaintext">@Model.SegmentDestinationCity.CityName</p>
-               </div>  
-              <div class="col-md-6">  
-                  <label class="form-label fw-bold">Departure Time & Date:</label>  
-                  <p class="form-control-plaintext">@Model.DepartureTime.ToString("dd MMM yyyy hh:mm tt")</p>
-              </div>  
-          </div>  
-          <div class="row mb-3">  
-              <div class="col-md-6">  
-                  <label class="form-label fw-bold">Arrival Time & Date:</label>
+<div class="container mt-4" id="pv_flight_booking">
+    <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+            <h5 class="card-title mb-0">Flight Details</h5>
+        </div>
+        <div class="card-body">
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label class="form-label fw-bold">Flight Name:</label>
+                    <p class="form-control-plaintext">@Model.Flight.FlightCompany.CompanyName</p>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label fw-bold">Source City:</label>
+                    <p class="form-control-plaintext">@Model.SegmentSourceCity.CityName</p>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label class="form-label fw-bold">Destination:</label>
+                    <p class="form-control-plaintext">@Model.SegmentDestinationCity.CityName</p>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label fw-bold">Departure Time & Date:</label>
+                    <p class="form-control-plaintext">@Model.DepartureTime.ToString("dd MMM yyyy hh:mm tt")</p>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label class="form-label fw-bold">Arrival Time & Date:</label>
                     <p class="form-control-plaintext">@Model.ArrivalTime.ToString("dd MMM yyyy hh:mm tt")</p>
-                </div>  
-              <div class="col-md-6">  
-                  <label class="form-label fw-bold">Travel Duration:</label>  
-                  <p class="form-control-plaintext">@((Model.ArrivalTime - Model.DepartureTime).ToString(@"hh\:mm"))</p>  
-              </div>  
-          </div>  
-          <div class="d-flex justify-content-end">  
-              <button class="btn btn-success me-2" id="btnBooking">Book</button>
-                <button class="btn btn-danger" id="cancelButton">Cancel</button>
-            </div>  
-      </div>  
-  </div>  
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label fw-bold">Travel Duration:</label>
+                    <p class="form-control-plaintext">@((Model.ArrivalTime - Model.DepartureTime).ToString(@"hh\:mm"))</p>
+                </div>
+            </div>
+            <div class="d-flex justify-content-end">
+               <button class="btn btn-success me-2" id="btnBooking" onclick="BookFlightClick(@Model.SegmentID)">Book</button>
+               <button class="btn btn-danger" id="cancelButton">Cancel</button>
+            </div>
+            
+        </div>
+    </div>
+    <script>
+       
+            // Bind cancel button click event
+          /*  $('#cancelButton').on('click', function () {
+                $('#partialViewContainer').hide(); // Remove the partial view from the DOM
+            });*/
+
+            // Bind booking button click event
+          
+     
+    </script>
 </div>
-<script>
-    $('#cancelButton').on('click', function () {
-             $('#partialViewContainer').hide(); // Remove the partial view from the DOM
-        });
-</script>
+<div></div>
+ 

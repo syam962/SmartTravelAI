@@ -8,6 +8,7 @@ namespace Travel.Web.Reposistory
         Task<IEnumerable<Booking>> GetBookingsByUserIdAsync(int userId);
         Task<IEnumerable<Booking>> GetBookingsByFlightIdAsync(int flightId);
         Task<Booking> GetBookingWithDetailsAsync(int bookingId);
+        Task AddBookingAsync(Booking booking, IEnumerable<BookingSegment> bookingSegments);
     }
 
     public class BookingRepository : Repository<Booking>, IBookingRepository
@@ -52,6 +53,35 @@ namespace Travel.Web.Reposistory
                 .Include(b => b.BookingSegments)
                     .ThenInclude(bs => bs.FlightSegment)
                 .FirstOrDefaultAsync();
+        }
+
+        public async Task AddBookingAsync(Booking booking, IEnumerable<BookingSegment> bookingSegments)
+        {
+            using var transaction = await _context.Database.BeginTransactionAsync();
+            try
+            {
+                // Insert booking
+                await _context.Bookings.AddAsync(booking);
+                await _context.SaveChangesAsync();
+
+                // Insert booking segments
+                foreach (var segment in bookingSegments)
+                {
+                    segment.BookingID = booking.BookingID; // Set the foreign key
+                    await _context.BookingSegments.AddAsync(segment);
+                }
+
+                await _context.SaveChangesAsync();
+
+                // Commit transaction
+                await transaction.CommitAsync();
+            }
+            catch
+            {
+                // Rollback transaction in case of error
+                await transaction.RollbackAsync();
+                throw;
+            }
         }
     }
 }

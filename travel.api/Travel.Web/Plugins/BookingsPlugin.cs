@@ -20,15 +20,16 @@ public sealed class BookingsPlugin
 
         var res = await _locationService.GetAllCitiesAsync();
         List<CityDTO> result = new List<CityDTO>();
-       
+
 
         return res.ToList();
     }
-    public BookingsPlugin(IFlightService flightService, ILocationService location)
+    public BookingsPlugin(IFlightService flightService, ILocationService location,IFlightBookingService flightBookingService)
 
     {
         _flightService = flightService;
         _locationService = location;
+        _flightBookingService = flightBookingService;
 
 
     }
@@ -55,20 +56,39 @@ public sealed class BookingsPlugin
     [KernelFunction("BookFlight")]
     [Description("Book flight ticket for a given date,passenger count,SegmentId.SegmentId  can be get from FlightLists function")]
     public async Task<string> BookFlight(
-     
-     
+
+
       [Description("Segmnent ID. This is a required field")] int segmentID,
-    
+
       [Description("Booking Date.This is a required field")] DateTime bookingDate,
       [Description("Number of Passengers.This is a required field")] int numberOfPassengers
-      
+
     )
     {
-       
+
         return "Please verify the booking details and confirm your booking.";
 
     }
 
+    [KernelFunction("BookingList")]
+    [Description("List of bookings for a user")]
+    public async Task<IEnumerable<BookingDTO>> BookingsList(
+
+
+      [Description("UserID")] int userID)
+
+    {
+        // Fetch the bookings for the user from the database
+        var bookings = await _flightBookingService.GetBookingsByUserIdAsync(userID);
+        // Convert the bookings to a string format for display
+        return bookings;
+    }
+
+
+
 
 
 }
+
+
+

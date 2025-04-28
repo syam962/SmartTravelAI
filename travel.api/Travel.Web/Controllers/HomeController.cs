@@ -138,6 +138,11 @@ namespace Travel.Web.Controllers
 
             try
             {
+                int userID = 0;
+                if (HttpContext.Items.TryGetValue("UserId", out var userIdObj) && userIdObj is string userIdStr)
+                {
+                    userID = Convert.ToInt32(userIdStr);
+                }
                 // Initialize chat history  
                 ChatHistory chatHistory;
                 Dictionary<string, object> functionArgs = new Dictionary<string, object>();
@@ -154,7 +159,8 @@ namespace Travel.Web.Controllers
                 var chatCompletionService = _kernel.GetRequiredService<IChatCompletionService>();
 
                 // Add the user's input to the chat history  
-                chatHistory.AddUserMessage(query.Query);
+                string messageTemplate = string.Format("Current userId :{0}.{1}", userID,query.Query);
+                chatHistory.AddUserMessage(messageTemplate);
                 string chatResult = string.Empty;
 
                 // Enable auto function calling  

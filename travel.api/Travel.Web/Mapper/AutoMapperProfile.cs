@@ -29,7 +29,10 @@ namespace Travel.Web.Mapping
 
             // FlightSegmentClass to FlightSegmentClassDTO mapping
             CreateMap<FlightSegmentClass, FlightSegmentClassDTO>();
-              
+
+            CreateMap<Booking, BookingDTO>();
+
+
         }
     }
 }

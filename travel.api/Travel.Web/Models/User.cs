@@ -18,6 +18,9 @@ namespace Travel.Web.Models
         [Column("phonenumber")]
         public string PhoneNumber { get; set; }
 
+        [Column("password")]
+        public string Password { get; set; }
+
         // Navigation Property
         public ICollection<Booking> Bookings { get; set; }
     }

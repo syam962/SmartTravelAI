@@ -17,7 +17,7 @@ namespace Travel.Web.Controllers
             return View();
         }
 
-     
+
 
         public class BookingRequest
         {
@@ -25,10 +25,17 @@ namespace Travel.Web.Controllers
         }
         public async Task<IActionResult> BookFlight([FromBody] BookingRequest request)
         {
+            int userID = 0;
+            if (HttpContext.Items.TryGetValue("UserId", out var userIdObj) && userIdObj is string userIdStr)
+            {
+                userID = Convert.ToInt32(userIdStr);
+            }
+
+
             try
             {
 
-                await _flightBookingService.CreateBookingAsync(Convert.ToInt32(request.SegmentID),1);
+                await _flightBookingService.CreateBookingAsync(Convert.ToInt32(request.SegmentID), userID);
                 return Json(new { success = true, message = "Booking created successfully." });
             }
             catch (Exception ex)

@@ -1,0 +1,69 @@
+﻿@{
+    Layout = "_layout_public";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow">
+                <div class="card-header text-center bg-primary text-white">
+                    <h4>Login</h4>
+                </div>
+                <div class="card-body">
+                    <form method="post" asp-action="Login" id="loginForm">
+                        <div class="form-group mb-3">
+                            <label for="Username">User Name</label>
+                            <input type="text" class="form-control" id="txtUserName" name="Username" placeholder="User name" required>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="Password">Password</label>
+                            <input type="password" class="form-control" id="txtPassword" name="Password" placeholder="Password" required>
+                        </div>
+                        <div class="form-check mb-3">
+                            <input type="checkbox" class="form-check-input" id="RememberMe" name="RememberMe">
+                            <label class="form-check-label" for="RememberMe">Remember Me</label>
+                        </div>
+                        <div class="d-grid">
+                            <button type="button" class="btn btn-primary" id="loginButton">Login</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer text-center">
+                    <small>Don't have an account? <a asp-controller="Account" asp-action="Register">Register here</a></small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+
+        document.getElementById('loginButton').addEventListener('click', async function () {
+             const userName = document.getElementById('txtUserName').value;
+             const password = document.getElementById('txtPassword').value;
+
+            const url='\LoginUser'
+            const response = await fetch(url, {
+                method: 'POST',
+                 headers: {
+                     'Content-Type': 'application/json'
+                 },
+                  body: JSON.stringify({ UserName: userName,Password:password })
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                if (data.token) {
+                    document.cookie = `authToken=${data.token}; path=/;`;
+                    alert('Login successful!');
+                    window.location.href = '/';
+                } else {
+                    alert('Login failed. Please try again.');
+                }
+            } else {
+                alert('An error occurred. Please try again.');
+            }
+        });
+    </script>
+}

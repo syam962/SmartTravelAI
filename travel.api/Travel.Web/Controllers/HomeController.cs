@@ -210,7 +210,7 @@ namespace Travel.Web.Controllers
                 _cacheService.AddToExistingCache("chat_history", chatHistory);
 
                 ResponseObject objResult = new ResponseObject();
-                objResult.ChatSummary = chatResult;
+                objResult.ChatSummary = await ConvertChatResultToHtmlAsync(chatResult);
                 objResult.FunctionName = lastfunctionCalled;
                 objResult.FunctionArgs = functionArgs;
                 return Json(new { success = true, data = objResult });
@@ -233,6 +233,46 @@ namespace Travel.Web.Controllers
         {
             return View();
 
+        }
+        public async Task<string> ConvertChatResultToHtmlAsync( string chatResult)
+        {
+             
+
+            try
+            {
+                // Initialize chat history
+                var chatHistory = new ChatHistory();
+
+                // Add the chat result to the chat history
+                chatHistory.AddUserMessage(chatResult);
+
+                // Get chat completion service
+                var chatCompletionService = _kernel.GetRequiredService<IChatCompletionService>();
+
+                // Enable auto function calling
+                var executionSettings = new OpenAIPromptExecutionSettings
+                {
+                    FunctionChoiceBehavior = FunctionChoiceBehavior.Auto()
+                };
+
+                // Define a prompt to convert the chat result into a div structure
+                string promptTemplate = "Convert the following chat result into an HTML div structure. Give me the html only don't include any instruction and the keyword html at the begining.Use bootstrap 5 styling: {0}";
+                string prompt = string.Format(promptTemplate, chatResult);
+
+                // Add the prompt to the chat history
+                chatHistory.AddUserMessage(prompt);
+
+                // Get the result from the AI
+                var result = await chatCompletionService.GetChatMessageContentAsync(chatHistory, executionSettings, _kernel);
+
+                // Return the generated HTML as JSON
+                return result.Content;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error occurred while converting chat result to HTML.");
+                return "An error occurred while processing your request.";
+            }
         }
 
 

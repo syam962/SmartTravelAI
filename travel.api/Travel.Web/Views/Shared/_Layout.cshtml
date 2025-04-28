@@ -19,30 +19,7 @@
            
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item">
-                       <a class="nav-link" href="#" onclick="loadPartialView('home/LoadFlightBooking?segmentID=40')">BookSegment</a>
-                    </li>
-                    <script>
-                       function loadPartialView(url) {
-                           fetch(url, {
-                               method: 'GET',
-                               headers: {
-                                   'X-Requested-With': 'XMLHttpRequest'
-                               }
-                           })
-                           .then(response => {
-                               if (response.ok) {
-                                   return response.text();
-                               } else {
-                                   throw new Error('Failed to load partial view.');
-                               }
-                           })
-                           .then(html => {
-                               document.querySelector('.container-fluid').innerHTML = html;
-                           })
-                           .catch(error => console.error(error));
-                       }
-                    </script>
+                 
                     <li class="nav-item">
                         <a class="nav-link" routerLink="/customer-care" routerLinkActive="active">Customer Care</a>
                     </li>

@@ -1,6 +1,3 @@
-Here’s a detailed and polished `README.md` template for your GitHub project **Smart Flight** based on your description. It includes sections commonly found in project repositories, with a professional and structured format:
-
----
 
 # Smart Flight
 

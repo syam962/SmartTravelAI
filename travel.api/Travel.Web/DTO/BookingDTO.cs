@@ -13,10 +13,9 @@ namespace Travel.Web.Models.DTOs
         public int NumberOfPassengers { get; set; }
         public string TripType { get; set; }
         public int ClassID { get; set; }
-       // public UserDTO User { get; set; }
+      
         public FlightDTO Flight { get; set; }
-        public FlightDTO ReturnFlight { get; set; }
-      //  public TravelClassDTO TravelClass { get; set; }
-       // public ICollection<BookingSegmentDTO> BookingSegments { get; set; }
+        
+     
     }
 }

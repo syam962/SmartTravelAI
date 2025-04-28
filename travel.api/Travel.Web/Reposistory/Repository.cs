@@ -3,6 +3,14 @@ using System.Collections.Generic;
 
 namespace Travel.Web.Reposistory
 {
+    public interface IRepository<T> where T : class
+    {
+        Task<IEnumerable<T>> GetAllAsync();
+        Task<T> GetByIdAsync(int id);
+        Task AddAsync(T entity);
+        Task UpdateAsync(T entity);
+        Task DeleteAsync(int id);
+    }
     public class Repository<T> : IRepository<T> where T : class
     {
         private readonly ApplicationDbContext _context;

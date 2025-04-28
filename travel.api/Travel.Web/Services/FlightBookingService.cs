@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Travel.Web.Models;
+using Travel.Web.Models.DTOs;
 using Travel.Web.Reposistory;
 
 namespace Travel.Web.Services
@@ -15,6 +16,7 @@ namespace Travel.Web.Services
 
         Task<bool> UpdateBookingAsync(Booking booking);
         Task<bool> DeleteBookingAsync(int bookingId);
+        Task<IEnumerable<BookingDTO>> GetBookingsByUserIdAsync(int userId);
     }
 
     public class FlightBookingService : IFlightBookingService
@@ -22,9 +24,10 @@ namespace Travel.Web.Services
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
 
-        public FlightBookingService(IUnitOfWork unitOfWork)
+        public FlightBookingService(IUnitOfWork unitOfWork,IMapper mapper)
         {
             _unitOfWork = unitOfWork;
+            _mapper = mapper;
 
         }
 
@@ -35,7 +38,7 @@ namespace Travel.Web.Services
             if (flightSegment == null)
                 throw new InvalidOperationException("Flight segment not found.");
 
-        
+
 
             Booking booking = new Booking
             {
@@ -44,8 +47,8 @@ namespace Travel.Web.Services
                 BookingDate = DateTime.UtcNow,
                 NumberOfPassengers = passengerCount,
                 ClassID = 1,// Default to 1 passenger
-                TripType= "OneWay", // Default to OneWay
-                UserID=1
+                TripType = "OneWay", // Default to OneWay
+                UserID = 1
 
             };
             BookingSegment segment = new BookingSegment
@@ -53,7 +56,7 @@ namespace Travel.Web.Services
                 SegmentID = segmentId,
                 PassengerCount = passengerCount,
                 ClassID = 1,
-               
+
 
             };
             await _unitOfWork.Bookings.AddBookingAsync(booking, new List<BookingSegment> { segment });
@@ -98,5 +101,16 @@ namespace Travel.Web.Services
             await _unitOfWork.Bookings.DeleteAsync(bookingId);
             return true;
         }
+
+        public async Task<IEnumerable<BookingDTO>> GetBookingsByUserIdAsync(int userId)
+        {
+            if (userId <= 0)
+                throw new ArgumentException("Invalid user ID.", nameof(userId));
+            var bookings = await _unitOfWork.Bookings.GetBookingsByUserIdAsync(userId);
+            IEnumerable<BookingDTO> lstBookings = _mapper.Map<IEnumerable<BookingDTO>>(bookings);
+            return lstBookings;
+        }
+
+
     }
 }

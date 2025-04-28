@@ -9,6 +9,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL;
 using Travel.Web.Reposistory;
 using Travel.Web.Services;
 using Travel.Web.Infrastructure;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -61,6 +63,25 @@ builder.Services.AddKeyedTransient<Kernel>("BookingsKernal", (sp, key) =>
 
     return new Kernel(sp, pluginCollection);
 });
+
+builder.Services.AddAuthentication("Bearer")
+    .AddJwtBearer("Bearer", options =>
+    {
+       // Add this using directive at the top of the file
+
+        // Existing code remains unchanged
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            ValidIssuer = "YourIssuer",
+            ValidAudience = "YourAudience",
+            IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("YourSecretKey")) // This line now works
+        };
+    });
+
 // Register AutoMapper for dependency injection
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 var app = builder.Build();
@@ -73,18 +94,21 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-
+app.UseAuthentication();
+app.UseAuthorization();
 app.UseHttpsRedirection();
-app.UseRouting();
+
 
 app.UseAuthorization();
-
+var jwtSecret = builder.Configuration["Jwt:Secret"];
+app.UseMiddleware<JwtCookieMiddleware>(jwtSecret);
 app.MapStaticAssets();
 
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}")
     .WithStaticAssets();
+app.UseRouting();
 
 app.Run();
 

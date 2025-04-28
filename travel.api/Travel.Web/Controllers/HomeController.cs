@@ -73,7 +73,9 @@ namespace Travel.Web.Controllers
         */
         public async Task<IActionResult> IndexAsync()
         {
-            return View();
+           
+
+                return View();
         }
 
 
@@ -219,6 +221,12 @@ namespace Travel.Web.Controllers
             // Get the flight details using the flightID
             FlightSegment flightDetails = await _flightService.GetFlightSegmentDetailsAsync(segmentID);
             return PartialView("flight_booking", flightDetails);
+        }
+
+        public async  Task<IActionResult> Login()
+        {
+            return View();
+
         }
 
 
